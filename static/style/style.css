@@ -240,3 +240,18 @@ main header h1 {
   color: #fff;
   padding: 50px;
 }/*# sourceMappingURL=style.css.map */
+
+
+.product-card img {
+  width: 400px;
+  object-fit: cover; 
+}
+
+.product-card{
+  display: grid;
+  justify-items: center;
+  color: black;
+  border: 11px solid black;
+  border-radius: 30px;
+
+}

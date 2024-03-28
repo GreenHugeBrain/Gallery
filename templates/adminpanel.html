@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="../static/style/admin-panel.css">
 </head>
+
 <body>
-        <form action="
-                
-        "></form>
+    <div class="add-product-container">
+        <form class="inputs" method="post" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            {{ form.name(class="name-input", placeholder="Add Product") }}
+            {{ form.img(class="image-input", accept='.jpeg, .jpg, .png') }}
+            {{ form.submit(class="submit-input") }}
+
+            <div class="product-container">
+                {% for product in products %}
+                    <div class="product-card">
+                        <span class="name">{{ product.name }}</span>
+                        <img src="{{ url_for('static', filename=product.img) }}" alt="Product Image">
+                        <a href="{{ url_for('edit_product', index=product.id) }}">Edit Product</a>
+            
+                        <form method="post" action="{{ url_for('remove_product', index=product.id) }}">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit">Remove Product</button>
+                        </form>
+                    </div>
+                {% endfor %}
+            </div>
+            
+            
+            
+        </form>
+    </div>
 </body>
+
 </html>
