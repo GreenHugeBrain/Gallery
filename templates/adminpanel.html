@@ -9,6 +9,13 @@
 </head>
 
 <body>
+<<<<<<< HEAD
+    <header>
+        <a href="{{ url_for('home') }}">Home</a>
+    </header>
+
+=======
+>>>>>>> 43c4bf602e8e9ef152702ba65fd824b8ea2a4d4d
     <div class="add-product-container">
         <form class="inputs" method="post" enctype="multipart/form-data">
             {{ form.hidden_tag() }}
@@ -18,6 +25,23 @@
 
             <div class="product-container">
                 {% for product in products %}
+<<<<<<< HEAD
+                <div class="product-card">
+                    <span class="name">{{ product.name }}</span>
+                    <img src="{{ url_for('static', filename=product.img) }}" alt="Product Image">
+                    <a href="{{ url_for('edit_product', index=product.id) }}">Edit Product</a>
+
+                    <form method="post" action="{{ url_for('remove_product', index=product.id) }}">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit">Remove Product</button>
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+
+
+
+=======
                     <div class="product-card">
                         <span class="name">{{ product.name }}</span>
                         <img src="{{ url_for('static', filename=product.img) }}" alt="Product Image">
@@ -33,8 +57,13 @@
             
             
             
+>>>>>>> 43c4bf602e8e9ef152702ba65fd824b8ea2a4d4d
         </form>
     </div>
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 43c4bf602e8e9ef152702ba65fd824b8ea2a4d4d

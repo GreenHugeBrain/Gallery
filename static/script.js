@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+document.querySelector('.img').addEventListener('click', () => {
+    document.querySelector('.img').classList.toggle('absolute');
+=======
 document.querySelector('.img').addEventListener('click', () => {
     const img = document.querySelector('.img');
     const rect = img.getBoundingClientRect(); // Get dimensions of the image
@@ -18,4 +22,5 @@ document.querySelector('.img').addEventListener('click', () => {
     // Additional CSS styles
     img.style.transition = 'all 0.3s ease'; // Smooth transition
     img.style.transformOrigin = 'center center'; // Transform origin at the center
+>>>>>>> 43c4bf602e8e9ef152702ba65fd824b8ea2a4d4d
 });

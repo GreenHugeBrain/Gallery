@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
   margin: 0;
   padding: 0;
@@ -45,3 +46,63 @@ header img{
 }
 
 
+.img {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+.img.absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+=======
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body{
+
+}
+
+header img{
+  width: 100px;
+  user-select: none;
+}
+
+.product img{
+  width: 500px;
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  display: block;
+}
+
+.product{
+  text-align: center;
+}
+
+.arts{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;  
+  gap: 50px;
+}
+
+.arts h3{
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  color: white;
+  letter-spacing: 3px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+>>>>>>> 43c4bf602e8e9ef152702ba65fd824b8ea2a4d4d
