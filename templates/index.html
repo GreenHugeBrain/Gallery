@@ -4,117 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style/style.css">
     <title>Document</title>
-    <link rel="stylesheet" href="../static/style/style.css">
 </head>
 
 <body>
     <header>
-        <nav class="container">
-            <ul>
-                <li><a href="#">saxeli gvari</a></li>
-
-
-                <li><a href="#">istoria</a></li>
-                <li><a href="#">kontaqti</a></li>
-            </ul>
-        </nav>
-        <div class="container-block">
-            <div id="images-slider">
-
-                <div class="image-holder">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-221/img-1.jpg" alt
-                        class="image-content-slide" id="slide-one-image"><img
-                        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-221/img-2.jpg" alt
-                        class="image-content-slide" id="slide-two-image"><img
-                        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-221/img-3.jpg" alt
-                        class="image-content-slide" id="slide-three-image">
-                </div>
-
-            </div>
+        <div class="logo">
+            <img src="/static/logo.png" alt="logo">
         </div>
-
-
     </header>
-    <main class="container">
-        <header>
-            <h1>gamofena</h1>
-        </header>
 
-        <section class="namushevrebi">
-            <div class="ncontainer">
-                {% for product in products %}
-                <div class="product-card">
-                    <span class="name">{{ product.name }}</span>
-                    <img src="{{ url_for('static', filename=product.img) }}" alt="Product Image">
-                    <div class="product-details">
-                    </div>
-                </div>
-                {% endfor %}
+    <main>
+        <div class="arts">
+            {% for product in products %}
+            <div class="product">
+                <img class="img" src="{{ url_for('static', filename=product.img) }}" alt="Product Image">
+                <h3 class="name">{{ product.name }}</h3>
 
             </div>
-        </section>
-    </main>
-    <div id="footer" role="contentinfo" class=" advanced_footer">
-        <div class="inner">
-            <div id="social_links" class="clearwithin">
-                <div id="facebook" class="social_links_item"><a
-                        href="https://www.facebook.com/racheluffnergallery/?ref=hl"
-                        class="external-link-aria-label-added external" rel="noopener"
-                        aria-label="Facebook, opens in a new tab. (Link goes to a different website and opens in a new window)."
-                        target="_blank"><span class="social_media_icon facebook"></span>Facebook<span
-                            class="screen-reader-only">, opens in a new tab.</span></a></div>
-                <div id="instagram" class="social_links_item"><a
-                        href="https://www.instagram.com/racheluffnergallery/?hl=en"
-                        class="external-link-aria-label-added external" rel="noopener"
-                        aria-label="Instagram, opens in a new tab. (Link goes to a different website and opens in a new window)."
-                        target="_blank"><span class="social_media_icon instagram"></span>Instagram<span
-                            class="screen-reader-only">, opens in a new tab.</span></a></div>
-            </div>
-
-            <div class="advanced_footer_item advanced_footer_item_1">
-                <p><img alt=""
-                        src="https://artlogic-res.cloudinary.com/c_limit,f_auto,fl_lossy,q_auto/ws-racheluffner/usr/library/main/images/logo2-white.png">
-                </p>
-            </div>
-            <div class="advanced_footer_item advanced_footer_item_2">
-                <p>170 Suffolk Street<br>New York, NY 10002<br>+1 (212) 274-0064<br>info@racheluffnergallery.com</p>
-            </div>
-
-
-
-
-
-            <div class="clear"></div>
-
-            <div class="copyright">
-
-                <div class="small-links-container">
-                    <div class="privacy-policy"><a href="/privacy-policy/">Privacy Policy</a></div>
-                    <div class="privacy-policy"><a href="/accessibility-policy/">Accessibility Policy</a></div>
-                    <div class="cookie_notification_preferences"><a href="javascript:void(0)" role="button"
-                            class="link-no-ajax">Manage cookies</a></div>
-                </div>
-
-                <div id="copyright" class="noprint">
-                    <div class="copyright-text">
-                        © Rachel Uffner
-                    </div>
-
-
-                    <div id="artlogic" class="noprint"><a href="https://artlogic.net/" target="_blank" rel="noopener"
-                            aria-label=" Site by Artlogic  (Link goes to a different website and opens in a new window)."
-                            class="external-link-aria-label-added external">
-                            Site by Artlogic
-                        </a></div>
-
-                </div>
-
-            </div>
-
-            <div class="clear"></div>
+            {% endfor %}
         </div>
-    </div>
+    </main>
+
+    <script src="static/script.js"></script>
 </body>
 
 </html>
