@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gallery page for my arts">
+    <link rel="icon" type="image/x-icon" href="/static/images/logo/favicon.ico">
     <link rel="stylesheet" href="/static/style/style.css">
-    <title>Document</title>
+    <title>Gallery</title>
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <img src="/static/logo.png" alt="logo">
+            <img src="/static/images/logo/logo.png" alt="logo">
         </div>
     </header>
 
@@ -19,14 +21,14 @@
         <div class="arts">
             {% for product in products %}
             <div class="product">
-                <img class="img" src="{{ url_for('static', filename=product.img) }}" alt="Product Image">
+                <img class="img" src="{{ url_for('static', filename=product.img) }}" alt="{{ product.name }}">
                 <h3 class="name">{{ product.name }}</h3>
             </div>
             {% endfor %}
         </div>
     </main>
 
-    <script src="static/script.js"></script>
+    <script src="static/js/script.js"></script>
 </body>
 
 </html>
