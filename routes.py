@@ -83,7 +83,9 @@ def admindashboard():
             
             # Save the image with .webp extension
             webp_filename = f"{os.path.splitext(filename)[0]}.webp"
+
             webp_file_path = path.join(app.root_path, "static", webp_filename)
+            
             image.save(webp_file_path, 'webp')
             
             # Create a new product with the webp filename
