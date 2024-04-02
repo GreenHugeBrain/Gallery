@@ -92,7 +92,7 @@ def admindashboard():
 
             # Optionally, remove the uploaded image
             os.remove(file_dir)
-
+            
             return redirect("/admindashboard")
             
         return render_template('adminpanel.html', form=form, products=products)
