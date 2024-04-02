@@ -6,7 +6,7 @@ from wtforms.validators import DataRequired, InputRequired
 
 class AddProduct(FlaskForm):
     name = StringField('Name', validators=[InputRequired()])
-    img = FileField('Image', validators=[FileRequired(), FileAllowed(['jpeg', 'jpg', 'png'])])
+    img = FileField('Image', validators=[FileRequired(), FileAllowed(['jpeg', 'jpg', 'png', 'webp'])])
     submit = SubmitField('Add Product')
     
 class EditProductForm(FlaskForm):
@@ -15,5 +15,6 @@ class EditProductForm(FlaskForm):
     submit = SubmitField('Update Product')
 
 class RemoveProductForm(FlaskForm):
-    submit = SubmitField('Remove Product', validators=[DataRequired()])
+    submit = SubmitField('Remove Product')
 
+#  validators=[DataRequired()]

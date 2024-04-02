@@ -1,10 +1,14 @@
 from ntpath import join
 from os import path
+import os
 from flask import flash, render_template, redirect, url_for, request, session
 from ext import app, db
 from forms import AddProduct, EditProductForm
 from werkzeug.utils import secure_filename
 from models import Product
+from PIL import Image
+import PIL
+import glob
 
 SECRET_PASSWORD = "g4113ry"
 
@@ -66,18 +70,35 @@ def admindashboard():
         products = Product.query.all()
         
         if form.validate_on_submit():
-            new_product = Product(name=form.name.data, img=form.img.data.filename)
-            new_product.create()
-
+            # Save the uploaded image
             filename = secure_filename(form.img.data.filename)
             file_dir = path.join(app.root_path, "static", filename)
             form.img.data.save(file_dir)
             
+            # Open the image
+            image = Image.open(file_dir)
+            
+            # Convert the image to RGB
+            image = image.convert('RGB')
+            
+            # Save the image with .webp extension
+            webp_filename = f"{os.path.splitext(filename)[0]}.webp"
+            webp_file_path = path.join(app.root_path, "static", webp_filename)
+            image.save(webp_file_path, 'webp')
+            
+            # Create a new product with the webp filename
+            new_product = Product(name=form.name.data, img=webp_filename)
+            new_product.create()
+
+            # Optionally, remove the uploaded image
+            os.remove(file_dir)
+
             return redirect("/admindashboard")
             
         return render_template('adminpanel.html', form=form, products=products)
     else:
         return render_template('password_form.html')
+
 
 
 
