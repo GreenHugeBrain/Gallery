@@ -19,12 +19,16 @@
 
     <main>
         <div class="arts">
-            {% for product in products %}
-            <div class="product">
-                <img class="img" src="{{ url_for('static', filename=product.img) }}" alt="{{ product.name }}">
-                <h3 class="name">{{ product.name }}</h3>
-            </div>
-            {% endfor %}
+            {% if products %}
+                {% for product in products %}
+                <div class="product">
+                    <img class="img" src="{{ url_for('static', filename=product.img) }}" alt="{{ product.name }}">
+                    <h3 class="name">{{ product.name }}</h3>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div> Gallery is empty</div>
+            {% endif %}
         </div>
     </main>
 
