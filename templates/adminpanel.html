@@ -26,15 +26,18 @@
                         <h2 class="name">{{ product.name }}</h2>
                         <div class="actions-wrapper">
                             <a href="{{ url_for('edit_product', index=product.id) }}">Edit Product</a>
-                            <form method="post" action="{{ url_for('remove_product', index=product.id) }}">
-                                <input type="hidden" name="_method" value="DELETE">
-                                <button type="submit">Remove Product</button>
-                            </form>
+                            
                         </div>
                     </div>
                 {% endfor %}
             </div>
         </form>
+        {% for product in products %}
+        <form method="post" action="{{ url_for('remove_product', index=product.id) }}">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit">Remove Product</button>
+        </form>
+        {% endfor %}
     </div>
 </body>
 
