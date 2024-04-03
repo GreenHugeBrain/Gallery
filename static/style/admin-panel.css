@@ -125,3 +125,7 @@ button:hover {
 .product-card button {
     background-color: #dc3545;
 }
+
+.no-products-message {
+    text-align: center;
+  }

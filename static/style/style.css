@@ -43,6 +43,9 @@ header img{
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.no-products-message {
+  text-align: center;
+}
 
 @media (max-width: 580px){
   .arts {
