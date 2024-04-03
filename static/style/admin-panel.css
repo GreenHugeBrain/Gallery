@@ -87,12 +87,12 @@ button:hover {
     cursor: pointer;
     transition-duration: .2s;
 }
-.submit-input:hover {
+.submit-input:not(:disabled):hover {
     background-color: #9d9292;
 }
 
 .name-input::placeholder {
-    color: #999;
+    color: #868080;
 }
 
 .product-card {

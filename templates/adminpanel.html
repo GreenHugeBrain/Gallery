@@ -17,7 +17,7 @@
             {{ form.hidden_tag() }}
             {{ form.name(class="name-input", placeholder="Product Name") }}
             {{ form.img(class="image-input", accept='.jpeg, .jpg, .png') }}
-            {{ form.submit(class="submit-input") }}
+            {{ form.submit(class="submit-input", disabled="true") }}
         </form>
         <div class="product-container">
             {% if products %}
@@ -40,6 +40,26 @@
             
         </div>
     </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const nameInput = document.querySelector('.name-input');
+            const imageInput = document.querySelector('.image-input');
+            const submitButton = document.querySelector('.submit-input');
+
+            nameInput.addEventListener('input', validateInputs);
+            imageInput.addEventListener('change', validateInputs);
+
+            function validateInputs() {
+                if (nameInput.value.trim() !== '' && imageInput.value !== '') {
+                    submitButton.removeAttribute('disabled');
+                } else {
+                    submitButton.setAttribute('disabled', 'disabled');
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -7,9 +7,6 @@ from forms import AddProduct, EditProductForm
 from werkzeug.utils import secure_filename
 from models import Product
 from PIL import Image
-import PIL
-import glob
-
 SECRET_PASSWORD = "g4113ry"
 
 
