@@ -85,6 +85,9 @@ def admindashboard():
             
             # Open the image
             image = Image.open(file_dir)
+
+            # resizing
+            image.thumbnail((1920, 1080), Image.ANTIALIAS)
             
             # Convert the image to RGB
             image = image.convert('RGB')
@@ -93,7 +96,6 @@ def admindashboard():
             webp_filename = f"{os.path.splitext(filename)[0]}.webp"
 
             webp_file_path = path.join(app.root_path, "static", webp_filename)
-            
             image.save(webp_file_path, 'webp', optimize = True, quality = 10)
             
             # Create a new product with the webp filename

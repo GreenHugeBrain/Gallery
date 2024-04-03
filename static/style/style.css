@@ -76,9 +76,9 @@ header img{
   cursor: pointer;
 }
 
-/* .fullscreen img {
-  width: -webkit-fill-available;
-} */
+.fullscreen img {
+  width: 90%;
+}
 .adjust-by-width {
   width: -webkit-fill-available;
 }
