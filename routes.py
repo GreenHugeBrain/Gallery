@@ -53,6 +53,17 @@ def remove_product(index):
     product = Product.query.get(index)
 
     if product:
+        # Retrieve image filename from the product
+        image_filename = product.img
+        
+        # Delete the image file from storage
+        if image_filename:
+            # Assuming you have a function to get the path of the image file
+            image_path = path.join(app.root_path, "static", image_filename)
+            if os.path.exists(image_path):
+                os.remove(image_path)
+        
+        # Delete the product
         product.delete()
     else:
         flash('You do not have permission to access the admin dashboard.', 'danger')
