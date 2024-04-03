@@ -76,16 +76,16 @@ header img{
   cursor: pointer;
 }
 
-.fullscreen img {
+/* .fullscreen img {
+  width: -webkit-fill-available;
+} */
+.adjust-by-width {
   width: -webkit-fill-available;
 }
-
-/* responsive */
-@media (max-width: 580px){
-  .arts {
-    padding: 2rem;
-  }
+.adjust-by-height {
+  height: -webkit-fill-available;
 }
+/* responsive */
 @media (max-width: 1200px){
   .product img{
     max-width: 600px;
@@ -97,6 +97,9 @@ header img{
   }
 }
 @media (max-width: 580px){
+  .arts {
+    padding: 2rem;
+  }
   .product img{
     max-width: 400px;
   }
