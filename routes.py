@@ -94,7 +94,7 @@ def admindashboard():
 
             webp_file_path = path.join(app.root_path, "static", webp_filename)
             
-            image.save(webp_file_path, 'webp')
+            image.save(webp_file_path, 'webp', optimize = True, quality = 10)
             
             # Create a new product with the webp filename
             new_product = Product(name=form.name.data, img=webp_filename)
