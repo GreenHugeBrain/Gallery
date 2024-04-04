@@ -2,7 +2,6 @@ Flask
 Flask-Cors
 Flask-Migrate
 Flask-restx
-Flask-SQLAchemy
-Flask-WTF
+SQLAlchemy
 pillow
 gunicorn
