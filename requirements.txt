@@ -3,5 +3,6 @@ Flask-Cors
 Flask-Migrate
 Flask-restx
 SQLAlchemy
+Flask-WTF
 pillow
 gunicorn
