@@ -1,6 +1,6 @@
 from ntpath import join
-from os import path
 import os
+from os import path
 from flask import flash, render_template, redirect, url_for, request, session
 from ext import app, db
 from forms import AddProduct, EditProductForm

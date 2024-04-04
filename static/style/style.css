@@ -8,9 +8,12 @@
   text-decoration: none;
 }
 body {
-  background-color: #abb6bf;
+  background-color: #153a58;
 }
-header img{
+.logo {
+  background-color: rgb(103 143 186 / 70%);
+}
+.logo img{
   width: 100px;
   user-select: none;
 }
@@ -21,6 +24,7 @@ header img{
   align-items: center;
   flex-direction: column;
   gap: 50px;
+  padding-top: 100px;
 }
 
 .arts h3{
