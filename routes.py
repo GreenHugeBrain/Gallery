@@ -87,7 +87,7 @@ def admindashboard():
             image = Image.open(file_dir)
 
             # resizing
-            image.thumbnail((1920, 1080), Image.ANTIALIAS)
+            image.thumbnail((1920, 900), Image.ANTIALIAS)
             
             # Convert the image to RGB
             image = image.convert('RGB')
